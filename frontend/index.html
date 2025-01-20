@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Education Study Material</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-switch">
+        <button onclick="toggleLanguage()" id="langToggle">Switch to Gujarati</button>
+    </div>
+
+    <main class="landing-container">
+        <div class="landing-content">
+            <h1>
+                <span class="gujarati hidden">ઉચ્ચ શિક્ષણ અભ્યાસ સામગ્રી</span>
+                <span class="english">Higher Education Study Material</span>
+            </h1>
+            
+            <div class="user-selection">
+                <div class="user-card" onclick="redirectToEducator()">
+                    <img src="https://img.icons8.com/color/96/000000/teacher.png" alt="Educator Icon">
+                    <h2>
+                        <span class="gujarati hidden">શિક્ષક</span>
+                        <span class="english">Educator</span>
+                    </h2>
+                    <p>
+                        <span class="gujarati hidden">અભ્યાસક્રમ અને સામગ્રી વ્યવસ્થાપિત કરો</span>
+                        <span class="english">Manage courses and materials</span>
+                    </p>
+                </div>
+
+                <div class="user-card" onclick="redirectToStudent()">
+                    <img src="https://img.icons8.com/color/96/000000/student.png" alt="Student Icon">
+                    <h2>
+                        <span class="gujarati hidden">વિદ્યાર્થી</span>
+                        <span class="english">Student</span>
+                    </h2>
+                    <p>
+                        <span class="gujarati hidden">સામગ્રી અપલોડ કરો અને અનુવાદ કરો</span>
+                        <span class="english">Upload and translate materials</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="login-section">
+                <button class="login-button" onclick="redirectToLogin()">
+                    <span class="gujarati hidden">લૉગિન કરો</span>
+                    <span class="english">Login</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleLanguage() {
+            const gujaratiElements = document.querySelectorAll('.gujarati');
+            const englishElements = document.querySelectorAll('.english');
+            const langToggle = document.getElementById('langToggle');
+
+            gujaratiElements.forEach(el => el.classList.toggle('hidden'));
+            englishElements.forEach(el => el.classList.toggle('hidden'));
+
+            langToggle.textContent = langToggle.textContent.includes('Gujarati') 
+                ? 'Switch to English' 
+                : 'Switch to Gujarati';
+        }
+
+        function redirectToEducator() {
+            window.location.href = 'educator-dashboard.html';
+        }
+
+        function redirectToStudent() {
+            window.location.href = 'student-upload.html';
+        }
+
+        function redirectToLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

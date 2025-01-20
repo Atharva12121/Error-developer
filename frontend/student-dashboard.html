@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Higher Education Study Material</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="language-switch">
+        <button onclick="toggleLanguage()" id="langToggle">Switch to Gujarati</button>
+    </div>
+
+    <nav class="dashboard-nav">
+        <div class="user-info">
+            <span class="user-name">John Doe</span>
+            <button onclick="logout()" class="logout-btn">
+                <span class="gujarati hidden">લૉગઆઉટ</span>
+                <span class="english">Logout</span>
+            </button>
+        </div>
+        <ul>
+            <li><a href="#courses">
+                <span class="gujarati hidden">મારા અભ્યાસક્રમો</span>
+                <span class="english">My Courses</span>
+            </a></li>
+            <li><a href="#assignments">
+                <span class="gujarati hidden">કાર્ય</span>
+                <span class="english">Assignments</span>
+            </a></li>
+            <li><a href="#progress">
+                <span class="gujarati hidden">પ્રગતি</span>
+                <span class="english">Progress</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-content">
+        <h1>
+            <span class="gujarati hidden">વિદ્યાર્થી ડેશબોર્ડ</span>
+            <span class="english">Student Dashboard</span>
+        </h1>
+
+        <section id="courses" class="dashboard-section">
+            <h2>
+                <span class="gujarati hidden">મારા અભ્યાસક્રમો</span>
+                <span class="english">My Courses</span>
+            </h2>
+            <div class="course-grid">
+                <!-- Course cards will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="assignments" class="dashboard-section">
+            <h2>
+                <span class="gujarati hidden">બાકી કાર્ય</span>
+                <span class="english">Pending Assignments</span>
+            </h2>
+            <div class="assignment-list">
+                <!-- Assignments will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleLanguage() {
+            const gujaratiElements = document.querySelectorAll('.gujarati');
+            const englishElements = document.querySelectorAll('.english');
+            const langToggle = document.getElementById('langToggle');
+
+            gujaratiElements.forEach(el => el.classList.toggle('hidden'));
+            englishElements.forEach(el => el.classList.toggle('hidden'));
+
+            langToggle.textContent = langToggle.textContent.includes('Gujarati') 
+                ? 'Switch to English' 
+                : 'Switch to Gujarati';
+        }
+
+        function logout() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
