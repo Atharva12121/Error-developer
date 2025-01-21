@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+
+    <h2>Upload Your PDF</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="pdf" accept="application/pdf" required />
+        <button type="submit">Upload PDF</button>
+    </form>
+
+
+    <h2>Translated PDF</h2>
+    <p>Your translated PDF is ready! <a href="" target="_blank">Click here to download it</a></p>
+
+    <h2>Sample PDF</h2>
+    <a href="/uploads/sample.pdf" target="_blank">
+        <img src="/static/pdf-icon.svg" alt="PDF Icon" style="width: 50px;">
+    </a>
+    <p>Click the icon to view the sample PDF</p>
+</body>
+
+</html>

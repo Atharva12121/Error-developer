@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higher Education Study Material</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div class="language-switch">
         <button onclick="toggleLanguage()" id="langToggle">Switch to Gujarati</button>
-        
+
     </div>
 
-    <header >
-        <img src="logo.png" alt="" class="logo" >
+    <header>
+        <img src="logo.png" alt="" class="logo">
         <h1>
             <span class="gujarati hidden">ઉચ્ચ શિક્ષણ અભ્યાસ સામગ્રી</span>
             <span class="english">Higher Education Study Material</span>
@@ -23,7 +25,7 @@
             <span class="gujarati hidden">ગુજરાતીમાં ઉચ્ચ શિક્ષણ અભ્યાસ સામગ્રી</span>
             <span class="english">Higher Education Study Material in Gujarati</span>
         </p>
-       
+
     </header>
 
     <nav>
@@ -36,7 +38,7 @@
             </li>
             <li>
                 <a href="#commerce">
-                    <span class="gujarati hidden">વાણિજ્ય</span>       
+                    <span class="gujarati hidden">વાણિજ્ય</span>
                     <span class="english">Commerce</span>
                 </a>
             </li>
@@ -73,7 +75,8 @@
                     </p>
                     <a href="#" class="button">
                         <span class="gujarati hidden">વધુ વાંચો</span>
-                        <span class="english">Read More</span>
+                        <span class="english"><a href="/upload-pdf">Read More</a></span>
+
                     </a>
                 </div>
                 <div class="subject-card">
@@ -235,10 +238,11 @@
             gujaratiElements.forEach(el => el.classList.toggle('hidden'));
             englishElements.forEach(el => el.classList.toggle('hidden'));
 
-            langToggle.textContent = langToggle.textContent.includes('Gujarati') 
-                ? 'Switch to English' 
-                : 'Switch to Gujarati';
+            langToggle.textContent = langToggle.textContent.includes('Gujarati') ?
+                'Switch to English' :
+                'Switch to Gujarati';
         }
     </script>
 </body>
+
 </html>
