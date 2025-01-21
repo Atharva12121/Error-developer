@@ -1,13 +1,13 @@
 require('regenerator-runtime/runtime'); // Ensure regenerator-runtime is available
 
 const express = require('express');
-const multer = require('multer');
-const pdfParse = require('pdf-parse');
-const { PDFDocument, rgb } = require('pdf-lib');
-const fs = require('fs-extra');
-const path = require('path');
-const axios = require('axios');
-const fontkit = require('@pdf-lib/fontkit');
+const multer = require('multer'); // Middleware to handle file uploads.
+const pdfParse = require('pdf-parse'); // Library to extract text from a PDF file.
+const { PDFDocument, rgb } = require('pdf-lib'); // Library to create a new PDF document and embed custom fonts.
+const fs = require('fs-extra'); //  Provides methods for working with the file system, such as reading and writing files.
+const path = require('path'); //Utility for handling file paths.
+const axios = require('axios'); // Used to make HTTP requests, specifically for translating text via the Google Translate API.
+const fontkit = require('@pdf-lib/fontkit'); //  A library for working with custom fonts in pdf-lib.
 
 // Setup Express app
 const app = express();
