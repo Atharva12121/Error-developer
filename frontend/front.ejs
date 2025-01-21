@@ -5,30 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title %>
+
     </title>
+
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
 
-    <h2>Upload Your PDF</h2>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="pdf" accept="application/pdf" required />
-        <button type="submit">Upload PDF</button>
+
+    <h2 style="text-align: center;">Upload Your PDF</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+        <label for="pdf" style="font-size: 18px; font-weight: bold; margin-bottom: 10px; display: block;">Select your PDF file:</label>
+        <input type="file" name="pdf" accept="application/pdf" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+
+        <button type="submit" style="width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+            Upload PDF
+        </button>
     </form>
 
-
-    <h2>Translated PDF</h2>
-    <p>Your translated PDF is ready! <a href="" target="_blank">Click here to download it</a></p>
-
-    <h2>Sample PDF</h2>
-    <a href="/uploads/sample.pdf" target="_blank">
-        <img src="/static/pdf-icon.svg" alt="PDF Icon" style="width: 50px;">
-    </a>
-    <p>Click the icon to view the sample PDF</p>
-</body>
 
 </html>

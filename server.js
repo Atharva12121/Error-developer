@@ -20,13 +20,13 @@ app.set('views', path.join(__dirname, 'frontend')); // Set views directory to 'f
 // Serve static files (for PDF sample and icons)
 app.use(express.static(path.join(__dirname, 'frontend')));
 
+// Serve static files from 'uploads' directory (for uploaded PDFs)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Route to render the front.ejs template (PDF upload form)
 app.get('/upload-pdf', (req, res) => {
     res.render('front', { title: 'PDF Translator' }); // Render EJS with title
 });
-
-// Serve static files from 'uploads' directory (for uploaded PDFs)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Setup multer for file uploads
 const storage = multer.diskStorage({
@@ -38,7 +38,9 @@ const storage = multer.diskStorage({
         cb(null, uploadDir);
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+        // Encode the filename before saving it
+        const encodedFilename = encodeURIComponent(file.originalname);
+        cb(null, Date.now() + '-' + encodedFilename); // Save the file with encoded name
     },
 });
 const upload = multer({ storage: storage });
@@ -71,7 +73,7 @@ app.post('/upload', upload.single('pdf'), async(req, res) => {
         // Send back the link to download the translated PDF
         res.render('front', {
             title: 'PDF Translator',
-            translatedPdfPath: `/uploads/translated_${req.file.filename}`,
+            translatedPdfPath: `/uploads/${encodeURIComponent('translated_' + req.file.filename)}`,
         });
 
         // Clean up the uploaded file

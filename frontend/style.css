@@ -1,4 +1,5 @@
 /* Base styles */
+
 :root {
     --primary-color: #112641;
     --secondary-color: #4285f4;
@@ -20,7 +21,9 @@ body {
     background-color: rgb(166, 166, 177);
 }
 
+
 /* Language switch styles */
+
 .language-switch {
     position: fixed;
     top: 1rem;
@@ -43,12 +46,16 @@ body {
     background-color: rgb(166, 166, 177);
 }
 
+
 /* Language display utilities */
+
 .hidden {
     display: none;
 }
 
+
 /* Header styles */
+
 header {
     background-color: var(--primary-color);
     color: rgb(255, 255, 255);
@@ -61,12 +68,13 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
+
 /* Navigation styles */
+
 nav {
     background-color: white;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  
-      
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -90,7 +98,9 @@ nav a:hover {
     color: white;
 }
 
+
 /* Main content styles */
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
@@ -107,19 +117,23 @@ section h2 {
     border-bottom: 2px solid var(--primary-color);
 }
 
+
 /* Grid layout for subjects */
+
 .subject-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
+
 /* Subject card styles */
+
 .subject-card {
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
@@ -136,7 +150,9 @@ section h2 {
     margin-bottom: 1rem;
 }
 
+
 /* Button styles */
+
 .button {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -148,10 +164,13 @@ section h2 {
 }
 
 .button:hover {
-    background-color: rgb(166, 166, 177);;
+    background-color: rgb(166, 166, 177);
+    ;
 }
 
+
 /* Footer styles */
+
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -160,32 +179,36 @@ footer {
     margin-top: 2rem;
 }
 
+
 /* Responsive design */
+
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-
     header h1 {
         font-size: 2rem;
     }
-
     .subject-grid {
         grid-template-columns: 1fr;
     }
-
     .language-switch {
         position: static;
         text-align: center;
         padding: 1rem;
     }
 }
-.logo{
+
+.logo {
     width: 150px;
     position: absolute;
     left: 0;
     margin-left: 250px;
-    
+}
+
+.but1 {
+    background-color: #112641 !important;
+    border-color: #112641 !important;
 }
